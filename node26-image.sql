@@ -38,7 +38,7 @@ CREATE TABLE `images` (
   PRIMARY KEY (`image_id`),
   KEY `user_id` (`user_id`),
   CONSTRAINT `images_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
@@ -49,7 +49,8 @@ CREATE TABLE `users` (
   `age` int DEFAULT NULL,
   `avatar` varchar(255) DEFAULT NULL,
   `role` enum('user','admin') DEFAULT 'user',
-  PRIMARY KEY (`user_id`)
+  PRIMARY KEY (`user_id`),
+  UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 INSERT INTO `comments` (`user_id`, `image_id`, `content`, `created_comment`) VALUES
@@ -63,7 +64,7 @@ INSERT INTO `comments` (`user_id`, `image_id`, `content`, `created_comment`) VAL
 (3, 2, 'ảnh rất đẹp', '2023-01-06 03:46:54');
 
 INSERT INTO `image_saves` (`user_id`, `image_id`, `created_save`) VALUES
-(2, 1, '2023-01-07 13:15:39');
+(2, 1, '2023-01-08 13:31:19');
 INSERT INTO `image_saves` (`user_id`, `image_id`, `created_save`) VALUES
 (2, 2, '2023-01-06 03:32:38');
 INSERT INTO `image_saves` (`user_id`, `image_id`, `created_save`) VALUES
@@ -77,11 +78,13 @@ INSERT INTO `images` (`image_id`, `image_name`, `image_url`, `descrition`, `user
 (2, 'Dreamer', 'https://dimg04.c-ctrip.com/images/0M751120009e19z74BAA6_Q60.jpg_.webp', 'bcd', 3);
 INSERT INTO `images` (`image_id`, `image_name`, `image_url`, `descrition`, `user_id`) VALUES
 (3, 'Ruộng bậc thang', 'https://www.invert.vn/media/uploads/uploads/2022/12/03143748-12-hinh-anh-dep.jpeg', 'bcd', 4);
+INSERT INTO `images` (`image_id`, `image_name`, `image_url`, `descrition`, `user_id`) VALUES
+(4, 'Host girl', 'http://localhost:4000/static/1673076143626-469430886-hot girl.jpeg', 'abcde...', 2);
 
 INSERT INTO `users` (`user_id`, `full_name`, `email`, `password`, `age`, `avatar`, `role`) VALUES
 (1, 'admin', 'admin@gmail.com', '$2b$10$hAU9TdrV8ReXbMYmrfzVdO.TJKm043d0aeed9Abkg8reIwJi.Wh9a', 18, '', 'admin');
 INSERT INTO `users` (`user_id`, `full_name`, `email`, `password`, `age`, `avatar`, `role`) VALUES
-(2, 'thu', 'thu@gmail.com', '$2b$10$T8NDe.59z3kOwB7VJlx11.B4O7RiPa2Z0LPABjR90ucp4xRPbDLM6', 21, '123', 'user');
+(2, 'thu', 'thu@gmail.com', '$2b$10$T8NDe.59z3kOwB7VJlx11.B4O7RiPa2Z0LPABjR90ucp4xRPbDLM6', 21, '1234', 'user');
 INSERT INTO `users` (`user_id`, `full_name`, `email`, `password`, `age`, `avatar`, `role`) VALUES
 (3, 'thanh', 'thanh@gmail.com', '$2b$10$bD2/EaLdwe9112jdWZ4cn.4cBgdP6f20TL03SbFgfZnyP8f3KRaty', 19, '', 'user');
 INSERT INTO `users` (`user_id`, `full_name`, `email`, `password`, `age`, `avatar`, `role`) VALUES
