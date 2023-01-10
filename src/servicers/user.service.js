@@ -12,6 +12,15 @@ const getUser = async (userId) => {
     }
 };
 
+const getListUser = async () => {
+    try {
+        const user = await User.findAll();
+        return user;
+    } catch (error) {
+        throw error;
+    }
+};
+
 
 const createUser = async (data) => {
     try {
@@ -113,6 +122,7 @@ const getUserSaves = async (userId) => {
 
 module.exports = {
     getUser,
+    getListUser,
     createUser,
     updateUser,
     deleteUser,

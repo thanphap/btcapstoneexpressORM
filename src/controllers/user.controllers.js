@@ -13,6 +13,17 @@ const getUser = () => {
     };
 };
 
+const getListUser = () => {
+    return async (req, res, next) => {
+        try {
+            const users = await userService.getListUser();
+            res.status(200).json(response(users));
+        } catch (error) {
+            next(error);
+        }
+    };
+};
+
 const createUser = () => {
     return async (req, res, next) => {
         try {
@@ -28,9 +39,22 @@ const createUser = () => {
 const updateUser = () => {
     return async (req, res, next) => {
         try {
-            const userId = res.locals.user.userId;
+            let user = req.body;
+            const { userId } = res.locals.user;
+            user = { ...user, role: "user" };
+            const updateUser = await userService.updateUser(userId, user);
+            res.status(200).json(response(updateUser));
+        } catch (error) {
+            next(error);
+        }
+    };
+};
+
+const updateUserAdmin = () => {
+    return async (req, res, next) => {
+        try {
             const user = req.body;
-            console.log(userId);
+            const { userId } = req.params;
             const updateUser = await userService.updateUser(userId, user);
             res.status(200).json(response(updateUser));
         } catch (error) {
@@ -77,8 +101,10 @@ const getUserSaveImages = () => {
 
 module.exports = {
     getUser,
+    getListUser,
     createUser,
     updateUser,
+    updateUserAdmin,
     deleteUser,
     getUserCreateImages,
     getUserSaveImages,
