@@ -49,8 +49,7 @@ CREATE TABLE `users` (
   `age` int DEFAULT NULL,
   `avatar` varchar(255) DEFAULT NULL,
   `role` enum('user','admin') DEFAULT 'user',
-  PRIMARY KEY (`user_id`),
-  UNIQUE KEY `email` (`email`)
+  PRIMARY KEY (`user_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 INSERT INTO `comments` (`user_id`, `image_id`, `content`, `created_comment`) VALUES
@@ -70,7 +69,8 @@ INSERT INTO `image_saves` (`user_id`, `image_id`, `created_save`) VALUES
 INSERT INTO `image_saves` (`user_id`, `image_id`, `created_save`) VALUES
 (3, 1, '2023-01-06 03:32:52');
 INSERT INTO `image_saves` (`user_id`, `image_id`, `created_save`) VALUES
-(3, 2, '2023-01-06 03:32:42');
+(3, 2, '2023-01-06 03:32:42'),
+(7, 1, '2023-01-10 01:54:26');
 
 INSERT INTO `images` (`image_id`, `image_name`, `image_url`, `descrition`, `user_id`) VALUES
 (1, 'Phố cổ Hội An', 'http://localhost:4000/static/1673076143626-469430886-hot girl.jpeg', 'abcde', 2);
@@ -90,7 +90,7 @@ INSERT INTO `users` (`user_id`, `full_name`, `email`, `password`, `age`, `avatar
 INSERT INTO `users` (`user_id`, `full_name`, `email`, `password`, `age`, `avatar`, `role`) VALUES
 (4, 'thien', 'thien@gmail.com', '$2b$10$qqImQfdS8bJhzatDl9Q3juVGXUqzsXwpqU6ti1i8BUoqfeLOiao8W', 19, '', 'user'),
 (5, 'hoa', 'hoa@gmail.com', '$2b$10$FMqQ8NS0MOSXGDxpP9J5aOgLtdDoptbGqPDtWcjUEcqpW8eo8w.Gu', 19, '', 'user'),
-(6, 'hien', 'hien@gmail.com', '$2b$10$M0KlZqDZkp1FYtf75F.ys.pu5yjisIDgu/h0R1JLEjU0aBmOgKbvK', 19, '', 'user');
+(6, 'hien', 'hien@gmail.com', '$2b$10$M0KlZqDZkp1FYtf75F.ys.pu5yjisIDgu/h0R1JLEjU0aBmOgKbvK', 21, '1234', 'admin');
 
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;

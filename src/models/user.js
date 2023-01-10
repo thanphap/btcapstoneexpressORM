@@ -20,7 +20,7 @@ module.exports = (sequelize) => {
             email: {
                 type: DataTypes.STRING,
                 allowNull: false,
-                unique: true,
+                unique: 'email',
                 set(value) {
                     const pattern = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
                     if (!pattern.test(value)) {
