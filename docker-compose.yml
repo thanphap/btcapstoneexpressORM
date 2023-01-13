@@ -23,9 +23,9 @@ services:
       - mysql
     command: 
       [
-        "/app/wait-for", 
+        "./wait-for", 
         "mysql:3306", 
         "--", 
         "node", 
-        "src/index.js"
+        "./src/index.js"
       ]
