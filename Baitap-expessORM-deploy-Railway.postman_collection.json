@@ -1,0 +1,952 @@
+{
+	"info": {
+		"_postman_id": "7e773fa2-b451-4706-884f-cbc093afcb1c",
+		"name": "Baitap-expessORM-Railway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24560016"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\":\"abc123@X\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://btcapstoneexpressorm-production.up.railway.app/api/v1/auth/login",
+							"protocol": "https",
+							"host": [
+								"btcapstoneexpressorm-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"thanh\",\r\n    \"email\": \"thanh@gmail.com\",\r\n    \"password\": \"abc123@X\",\r\n    \"age\": 22,\r\n    \"avatar\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://btcapstoneexpressorm-production.up.railway.app/api/v1/auth/register",
+							"protocol": "https",
+							"host": [
+								"btcapstoneexpressorm-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Home",
+			"item": [
+				{
+					"name": "get list images",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://btcapstoneexpressorm-production.up.railway.app/api/v1/images",
+							"protocol": "https",
+							"host": [
+								"btcapstoneexpressorm-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search images",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://btcapstoneexpressorm-production.up.railway.app/api/v1/images/search/pho co",
+							"protocol": "https",
+							"host": [
+								"btcapstoneexpressorm-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"images",
+								"search",
+								"pho co"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Detail image",
+			"item": [
+				{
+					"name": "get infor user (not login)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://btcapstoneexpressorm-production.up.railway.app/api/v1/users/2",
+							"protocol": "https",
+							"host": [
+								"btcapstoneexpressorm-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get profile user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJsb25nQGdtYWlsLmNvbSIsImlhdCI6MTY3Mzk0ODE0MSwiZXhwIjoxNjczOTkxMzQxfQ.UFxmlPSQTB3BFdLNAuhj7YTL_vOXWhsWnP96mYQ0vGw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://btcapstoneexpressorm-production.up.railway.app/api/v1/auth/profile",
+							"protocol": "https",
+							"host": [
+								"btcapstoneexpressorm-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail image",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://btcapstoneexpressorm-production.up.railway.app/api/v1/images/1",
+							"protocol": "https",
+							"host": [
+								"btcapstoneexpressorm-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"images",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "image comments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://btcapstoneexpressorm-production.up.railway.app/api/v1/images/1/comments",
+							"protocol": "https",
+							"host": [
+								"btcapstoneexpressorm-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"images",
+								"1",
+								"comments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "image saves",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://btcapstoneexpressorm-production.up.railway.app/api/v1/images/1/saves",
+							"protocol": "https",
+							"host": [
+								"btcapstoneexpressorm-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"images",
+								"1",
+								"saves"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "check save image by user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJsb25nQGdtYWlsLmNvbSIsImlhdCI6MTY3Mzk0ODE0MSwiZXhwIjoxNjczOTkxMzQxfQ.UFxmlPSQTB3BFdLNAuhj7YTL_vOXWhsWnP96mYQ0vGw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://btcapstoneexpressorm-production.up.railway.app/api/v1/images/1/checksave",
+							"protocol": "https",
+							"host": [
+								"btcapstoneexpressorm-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"images",
+								"1",
+								"checksave"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "save image by user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJsb25nQGdtYWlsLmNvbSIsImlhdCI6MTY3Mzk0ODE0MSwiZXhwIjoxNjczOTkxMzQxfQ.UFxmlPSQTB3BFdLNAuhj7YTL_vOXWhsWnP96mYQ0vGw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://btcapstoneexpressorm-production.up.railway.app/api/v1/images/3/save",
+							"protocol": "https",
+							"host": [
+								"btcapstoneexpressorm-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"images",
+								"3",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "comment image by user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJsb25nQGdtYWlsLmNvbSIsImlhdCI6MTY3Mzk0ODE0MSwiZXhwIjoxNjczOTkxMzQxfQ.UFxmlPSQTB3BFdLNAuhj7YTL_vOXWhsWnP96mYQ0vGw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"content\":\"ảnh tuyệt vời\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://btcapstoneexpressorm-production.up.railway.app/api/v1/images/3/comment",
+							"protocol": "https",
+							"host": [
+								"btcapstoneexpressorm-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"images",
+								"3",
+								"comment"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Image manager (role user)",
+			"item": [
+				{
+					"name": "get images created by user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJsb25nQGdtYWlsLmNvbSIsImlhdCI6MTY3Mzk0ODE0MSwiZXhwIjoxNjczOTkxMzQxfQ.UFxmlPSQTB3BFdLNAuhj7YTL_vOXWhsWnP96mYQ0vGw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://btcapstoneexpressorm-production.up.railway.app/api/v1/users/images",
+							"protocol": "https",
+							"host": [
+								"btcapstoneexpressorm-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get images saved by user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJsb25nQGdtYWlsLmNvbSIsImlhdCI6MTY3Mzk0ODE0MSwiZXhwIjoxNjczOTkxMzQxfQ.UFxmlPSQTB3BFdLNAuhj7YTL_vOXWhsWnP96mYQ0vGw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://btcapstoneexpressorm-production.up.railway.app/api/v1/users/saves",
+							"protocol": "https",
+							"host": [
+								"btcapstoneexpressorm-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"saves"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update image by user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJsb25nQGdtYWlsLmNvbSIsImlhdCI6MTY3Mzk0ODE0MSwiZXhwIjoxNjczOTkxMzQxfQ.UFxmlPSQTB3BFdLNAuhj7YTL_vOXWhsWnP96mYQ0vGw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"imageName\": \"Gái xinh\",\r\n    \"imageUrl\": \"https://www.invert.vn/media/uploads/uploads/2022/12/03191809-2.jpeg\",\r\n    \"descrition\": \"Anh rat dep\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://btcapstoneexpressorm-production.up.railway.app/api/v1/images/4",
+							"protocol": "https",
+							"host": [
+								"btcapstoneexpressorm-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"images",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload image by user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJsb25nQGdtYWlsLmNvbSIsImlhdCI6MTY3Mzk0ODE0MSwiZXhwIjoxNjczOTkxMzQxfQ.UFxmlPSQTB3BFdLNAuhj7YTL_vOXWhsWnP96mYQ0vGw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/thanp/Desktop/hot girl.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://btcapstoneexpressorm-production.up.railway.app/api/v1/upload/images",
+							"protocol": "https",
+							"host": [
+								"btcapstoneexpressorm-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"upload",
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete image by user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJsb25nQGdtYWlsLmNvbSIsImlhdCI6MTY3Mzk0ODE0MSwiZXhwIjoxNjczOTkxMzQxfQ.UFxmlPSQTB3BFdLNAuhj7YTL_vOXWhsWnP96mYQ0vGw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://btcapstoneexpressorm-production.up.railway.app/api/v1/images/5",
+							"protocol": "https",
+							"host": [
+								"btcapstoneexpressorm-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"images",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Add image (role user)",
+			"item": [
+				{
+					"name": "create image by user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJsb25nQGdtYWlsLmNvbSIsImlhdCI6MTY3Mzk0ODE0MSwiZXhwIjoxNjczOTkxMzQxfQ.UFxmlPSQTB3BFdLNAuhj7YTL_vOXWhsWnP96mYQ0vGw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"imageName\": \"Nhà đẹp\",\r\n    \"imageUrl\": \"https://static1.cafeland.vn/cafelandnew/hinh-anh/2022/06/18/159/image-20220618145416-1.png\",\r\n    \"descrition\": \"Anh dep\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://btcapstoneexpressorm-production.up.railway.app/api/v1/images",
+							"protocol": "https",
+							"host": [
+								"btcapstoneexpressorm-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload image by user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJsb25nQGdtYWlsLmNvbSIsImlhdCI6MTY3Mzk0ODE0MSwiZXhwIjoxNjczOTkxMzQxfQ.UFxmlPSQTB3BFdLNAuhj7YTL_vOXWhsWnP96mYQ0vGw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/thanp/Desktop/hot girl.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://btcapstoneexpressorm-production.up.railway.app/api/v1/upload/images",
+							"protocol": "https",
+							"host": [
+								"btcapstoneexpressorm-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"upload",
+								"images"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile (role user)",
+			"item": [
+				{
+					"name": "get profile user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJsb25nQGdtYWlsLmNvbSIsImlhdCI6MTY3Mzk0ODE0MSwiZXhwIjoxNjczOTkxMzQxfQ.UFxmlPSQTB3BFdLNAuhj7YTL_vOXWhsWnP96mYQ0vGw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://btcapstoneexpressorm-production.up.railway.app/api/v1/auth/profile",
+							"protocol": "https",
+							"host": [
+								"btcapstoneexpressorm-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update profile by user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJsb25nQGdtYWlsLmNvbSIsImlhdCI6MTY3Mzk0ODE0MSwiZXhwIjoxNjczOTkxMzQxfQ.UFxmlPSQTB3BFdLNAuhj7YTL_vOXWhsWnP96mYQ0vGw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"long \",\r\n    \"email\": \"long@gmail.com\",\r\n    \"age\": 18,\r\n    \"avatar\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://btcapstoneexpressorm-production.up.railway.app/api/v1/users",
+							"protocol": "https",
+							"host": [
+								"btcapstoneexpressorm-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload avatar by user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiZW1haWwiOiJsb25nQGdtYWlsLmNvbSIsImlhdCI6MTY3Mzk0ODE0MSwiZXhwIjoxNjczOTkxMzQxfQ.UFxmlPSQTB3BFdLNAuhj7YTL_vOXWhsWnP96mYQ0vGw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/thanp/Desktop/hot girl.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://btcapstoneexpressorm-production.up.railway.app/api/v1/upload/avatars",
+							"protocol": "https",
+							"host": [
+								"btcapstoneexpressorm-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"upload",
+								"avatars"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User manager (role admin)",
+			"item": [
+				{
+					"name": "get list user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2NzM5NDcxNzQsImV4cCI6MTY3Mzk5MDM3NH0.5ekIbsmdEv0h1J4iCHn3j3_J-MoUAgUXZE8zlhU5-2E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://btcapstoneexpressorm-production.up.railway.app/api/v1/users",
+							"protocol": "https",
+							"host": [
+								"btcapstoneexpressorm-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2NzM5NDcxNzQsImV4cCI6MTY3Mzk5MDM3NH0.5ekIbsmdEv0h1J4iCHn3j3_J-MoUAgUXZE8zlhU5-2E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"hue\",\r\n    \"email\": \"hue@gmail.com\",\r\n    \"password\":\"123abc@C\",\r\n    \"age\": 20,\r\n    \"avatar\": \"\",\r\n    \"role\": \"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://btcapstoneexpressorm-production.up.railway.app/api/v1/users",
+							"protocol": "https",
+							"host": [
+								"btcapstoneexpressorm-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2NzM5NDcxNzQsImV4cCI6MTY3Mzk5MDM3NH0.5ekIbsmdEv0h1J4iCHn3j3_J-MoUAgUXZE8zlhU5-2E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"fullName\": \"hue\",\r\n    \"email\": \"hue@gmail.com\",\r\n    \"age\": 26,\r\n    \"avatar\": \"\",\r\n    \"role\": \"user\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://btcapstoneexpressorm-production.up.railway.app/api/v1/users/6",
+							"protocol": "https",
+							"host": [
+								"btcapstoneexpressorm-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2NzM5NDcxNzQsImV4cCI6MTY3Mzk5MDM3NH0.5ekIbsmdEv0h1J4iCHn3j3_J-MoUAgUXZE8zlhU5-2E",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://btcapstoneexpressorm-production.up.railway.app/api/v1/users/7",
+							"protocol": "https",
+							"host": [
+								"btcapstoneexpressorm-production",
+								"up",
+								"railway",
+								"app"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
