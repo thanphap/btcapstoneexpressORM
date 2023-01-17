@@ -11,4 +11,4 @@ RUN chmod +x wait-for
 # xuat ra port 
 EXPOSE 4000
 # thuc thi: chay ung dung
-CMD ["node", "src/index.js"]
+CMD ["node", "./src/index.js"]
